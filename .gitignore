@@ -1,0 +1,4 @@
+# Ignore forge output files
+out/
+cache/
+*.dat
