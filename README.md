@@ -18,7 +18,7 @@ It is not meant to be used in any production setting.
   - `source ~/.bashrc`
   - `foundryup`
 
-### Running Locally
+### Running locally
 - `git clone git@github.com:ava-labs/btcb-por-workshop.git`
 - `cd btcb-por-workshop`
 - `git submodule update --init --recursive`
@@ -56,7 +56,7 @@ sudo reboot
 docker run hello-world # This should work without sudo now
 ```
 
-### Running with docker
+### Running with Docker (optional)
 - `git clone git@github.com:ava-labs/btcb-por-workshop.git`
 - `cd btcb-por-workshop`
 - `git submodule update --init --recursive`
