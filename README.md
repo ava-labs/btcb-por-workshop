@@ -9,19 +9,16 @@ It is not meant to be used in any production setting.
 - [OpenSSL](https://www.openssl.org/)
   - `sudo apt install libssl-dev`
 - [Python3](https://www.python.org/downloads/)
-  - `sudo apt install software-properties-common`
-  - `sudo add-apt-repository ppa:deadsnakes/ppa`
-  - `sudo apt update`
-  - `sudo apt install python3.8`
+  - `sudo apt install python3`
 - [Web3](https://pypi.org/project/web3/)
   - `sudo apt-get -y install python3-pip`
-  - `pip install web3`
+  - `pip3 install web3`
 - [Foundry](https://github.com/foundry-rs/foundry)
   - `curl -L https://foundry.paradigm.xyz | bash`
   - `source ~/.bashrc`
   - `foundryup`
 
-### Running Locally
+### Running locally
 - `git clone git@github.com:ava-labs/btcb-por-workshop.git`
 - `cd btcb-por-workshop`
 - `git submodule update --init --recursive`
@@ -59,7 +56,7 @@ sudo reboot
 docker run hello-world # This should work without sudo now
 ```
 
-### Running with docker
+### Running with Docker (optional)
 - `git clone git@github.com:ava-labs/btcb-por-workshop.git`
 - `cd btcb-por-workshop`
 - `git submodule update --init --recursive`
