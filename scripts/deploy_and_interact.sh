@@ -92,8 +92,8 @@ else
 fi
 
 # Call the contract methods to check if BTC.b is fully collateralized.
-collateral_amounts=$(cast call $contract_address "getCollateralAmounts()(uint256,int256)" --rpc-url https://api.avax-test.network/ext/bc/C/rpc)
-collateralized_result=$(cast call $contract_address "isFullyCollateralized()(bool)" --rpc-url https://api.avax-test.network/ext/bc/C/rpc)
+collateral_amounts=$(cast call $contract_address "getCollateralAmounts()(uint256,int256)" --rpc-url $api_endpoint)
+collateralized_result=$(cast call $contract_address "isFullyCollateralized()(bool)" --rpc-url $api_endpoint)
 collateral_amounts_arr=($collateral_amounts)
 token_supply=${collateral_amounts_arr[0]}
 collateral=${collateral_amounts_arr[1]}
