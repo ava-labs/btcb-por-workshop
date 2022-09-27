@@ -3,6 +3,9 @@
 # Exit on any errors
 set -e
 
+# Make sure forge and cast are available.
+export PATH="$PATH:$HOME/.foundry/bin"
+
 # Public Fuji API
 api_endpoint=https://api.avax-test.network/ext/bc/C/rpc
 
@@ -12,14 +15,14 @@ public_key_file=test_wallet_public_key.dat
 
 # Determine which directory we're in.
 current_dir="$(basename $(pwd))"
-if [[ "$current_dir" == "btcb-por-workshop" ]]; then
+if [[ "$current_dir" == "btcb-por-workshop" || "$current_dir" == "code" ]]; then
     scripts_directory_prefix=./scripts
     contracts_directory_prefix=./contracts
 elif [[ "$current_dir" == "scripts" ]]; then
     scripts_directory_prefix=.
     contracts_directory_prefix=../contracts
 else
-    echo "Error: Scripts must be run from base directory of repository or from scripts/."
+    echo "Error: Scripts must be run from base directory of repository or from scripts/. Current directory is $current_dir."
     exit 1
 fi
 
@@ -53,8 +56,20 @@ do
 done
 echo "Address has sufficient balance to deploy sample contract."
 
+# Check interactive vs. non-interactive
+if [[ $# == 1 && "$1" == "--no-input" ]]; then
+    wait_for_input=false
+else
+    wait_for_input=true
+fi
+
 # Wait for user to press a key.
-read -p "Press any key to continue."
+if [[ $wait_for_input == "true" ]]; then
+    read -p "Press any key to continue."
+else
+    echo "Waiting for 5 seconds..."
+    sleep 5
+fi
 
 # Deploy the sample DeFi contract to the network.
 echo "Deploying sample DeFi contract..."
@@ -69,7 +84,12 @@ echo "Deployed contract to: $contract_address"
 echo "Deployment transaction ID: $deploy_tx_hash"
 
 # Wait for user to press a key.
-read -p "Press any key to continue."
+if [[ $wait_for_input == "true" ]]; then
+    read -p "Press any key to continue."
+else
+    echo "Waiting for 5 seconds..."
+    sleep 5
+fi
 
 # Call the contract methods to check if BTC.b is fully collateralized.
 collateral_amounts=$(cast call $contract_address "getCollateralAmounts()(uint256,int256)" --rpc-url https://api.avax-test.network/ext/bc/C/rpc)

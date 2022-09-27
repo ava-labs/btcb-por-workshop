@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  node:
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile
+    container_name: btcb-por-demo
+    init: true
+    working_dir: /code
+    entrypoint: /code/scripts/deploy_and_interact.sh --no-input
+    network_mode: "host"
+    volumes:
+      - type: bind
+        source: ./
+        target: /code/
