@@ -7,7 +7,7 @@ It is not meant to be used in any production setting.
 
 ### Dependencies for running locally
 - [OpenSSL](https://www.openssl.org/)
-  - `sudo libssl-dev`
+  - `sudo apt install libssl-dev`
 - [Python3](https://www.python.org/downloads/)
   - `sudo apt install software-properties-common`
   - `sudo add-apt-repository ppa:deadsnakes/ppa`
