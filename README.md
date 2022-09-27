@@ -12,7 +12,7 @@ It is not meant to be used in any production setting.
   - `sudo apt install python3`
 - [Web3](https://pypi.org/project/web3/)
   - `sudo apt-get -y install python3-pip`
-  - `pip install web3`
+  - `pip3 install web3`
 - [Foundry](https://github.com/foundry-rs/foundry)
   - `curl -L https://foundry.paradigm.xyz | bash`
   - `source ~/.bashrc`
