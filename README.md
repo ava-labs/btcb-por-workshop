@@ -9,10 +9,7 @@ It is not meant to be used in any production setting.
 - [OpenSSL](https://www.openssl.org/)
   - `sudo apt install libssl-dev`
 - [Python3](https://www.python.org/downloads/)
-  - `sudo apt install software-properties-common`
-  - `sudo add-apt-repository ppa:deadsnakes/ppa`
-  - `sudo apt update`
-  - `sudo apt install python3.8`
+  - `sudo apt install python3`
 - [Web3](https://pypi.org/project/web3/)
   - `sudo apt-get -y install python3-pip`
   - `pip install web3`
