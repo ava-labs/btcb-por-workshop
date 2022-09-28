@@ -1,4 +1,4 @@
-This repository was put together for a developer workshop at SmartCon 2022. A recording of the workshop can be viewed here: https://youtu.be/vXx4aXJfi3o?t=17539
+This repository was put together for a developer workshop at SmartCon 2022. A recording of the workshop can be viewed [here](https://youtu.be/vXx4aXJfi3o?t=17539)
 
 # Avalanche BTC.b Proof-of-Reserves Demo
 
